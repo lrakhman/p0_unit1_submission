@@ -6,17 +6,26 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
 
 # Person 1's solution
 def my_array_finding_method(source, thing_to_find)
-  # Your code here!
+  source.select {|i| i =~ /#{thing_to_find}/}
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  # Your code here!
+  source.select {|k, v| v == thing_to_find}.keys
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# I used the .select method on both the array and the hash. When used with an Array,
+# this method will look through each element and return a new array of the ones that match
+# the proper input (in this case, a regex). When used with a Hash, however, it returns
+# a NEW HASH. So be careful! In the case of a hash, you must specify whether you're 
+# looking for a key match, or a value match. It will then loop through each key-value
+# pair and return a hash, NOT AN ARRAY, of the matches. I then used the .keys method,
+# which WILL return an array of keys (the same with .values, which returns an array of values.)
+# One super cool thing I stumbled upon though:
+# http://stackoverflow.com/questions/2268421/ruby-regular-expression-using-variable-name. 
+# What is that, you ask? Apparently string interpolation works with regular expressions!!
+# What!?!? Mind blown. 
+
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
