@@ -48,7 +48,7 @@ end
 # and the code is pretty concise. I could do the following for the first method:
 
   def pad!(size, value = nil)
-    (size - self.length).times {|i| self << value}
+    (size - self.length).times { self << value }
    self
   end
 
