@@ -20,6 +20,27 @@
 
 //YOUR CODE HERE!
 
+var adam = new Client("Adam Sandler", 47, "That's your home! Are you too good for your home?!");
+var kristin = new Client("Kristin Bell", 33, "I'm gonna be Veronica Mars forever.");
+var jim = new Client("Jim Carrey", 52, "My best movie was Ace Ventura.");
+
+
+function Client(name, age, quote) {
+  this.name = name,
+  this.age = age,
+  this.quote = quote
+  
+  var print = function(){
+    console.log("This is " + name + "and his/her age is " + age + "and he/she says: " + quote)
+  }
+  
+  print()
+  
+}
+
+// OR:
+
+
 function Client(name, age, quote) {
   this.name = name,
   this.age = age,
@@ -39,11 +60,11 @@ adam.print();
 kristin.print();
 jim.print();
 
+
 var shooterMcGavin = new Client("Shooter McGavin", 48, "Just stay out of my way... or you'll pay. Listen to what I say.");
 shooterMcGavin.constructor === Client;
 shooterMcGavin.age === 48;
 shooterMcGavin.quote === "Just stay out of my way... or you'll pay. Listen to what I say.";
-
 
 
 // 4. "SHOW 'EM OFF!"
