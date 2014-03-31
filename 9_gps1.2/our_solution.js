@@ -67,6 +67,8 @@ shooterMcGavin.age === 48;
 shooterMcGavin.quote === "Just stay out of my way... or you'll pay. Listen to what I say.";
 
 
+// We had 2 solutions because for one of them the function cannot be called outside of the "class", and for the other 
+// it can be called outside of the "class" (I know, I know, no classes in JS).
 // 4. "SHOW 'EM OFF!"
 
 
