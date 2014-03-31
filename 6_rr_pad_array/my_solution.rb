@@ -4,7 +4,7 @@
 
 
 
-# 1. First Person's solution I liked: Mikee Pourhadi
+# 1. First Person's solution I liked
 #    What I learned from this solution
 
 # I learned about the .dup method, which I accidentally thought he used and so went to look
@@ -35,9 +35,35 @@ end
 
 # 2. Second Person's solution I liked
 #    What I learned from this solution
+# I'm pretty surprised with the for loop here! I wouldn't have even thought of that, and
+# I like that they used it. I need to get better acquainted with loops that are not iterators.
 # Copy solution here:
 
-
+class Array
+#Below is the non-destructive pad method
+	def pad (number, object = nil)
+		new_array = self.map{|a| a}
+		if new_array.length >= number
+			return new_array
+		else
+			for i in new_array.length...number
+				new_array [i] = object
+			end
+			return new_array
+		end
+	end
+# Below is the destructive pad! method
+	def pad! (number, object = nil)
+		if self.length >= number
+			return self
+		else
+			for i in self.length...number
+				self [i] = object
+			end
+			return self
+		end
+	end
+end
 
 
 # 3. My original solution:
