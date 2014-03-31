@@ -36,6 +36,31 @@ def my_hash_modification_method(source, thing_to_modify)
   # Your code here!
 end
 
+def my_array_modification_method(source, thing_to_modify)
+    updated_array = [];
+	source.each do |x| 
+		if x.is_a? Integer 
+			x += thing_to_modify
+			updated_array << x
+		else
+		    updated_array << x
+		end
+	end
+    updated_array
+end
+
+def my_hash_modification_method(source, thing_to_modify)
+	source.each do |name, age| 
+		source[name] = age += thing_to_modify
+	end
+end
+
+# Identify and describe the ruby method you implemented. 
+# (FROM MIKEE:)
+# Unfortunately, I can't find out how to manipulate the original object (for the array only, actually). I tried replace, delete, index.at,
+# and I just couldn't get it to work. Instead, I used each and just made a new array or object. I feel like this is completely incorrect.
+#
+
 # Identify and describe the ruby method you implemented. 
 # 
 #
@@ -57,14 +82,22 @@ end
 #
 
 
-# Person 4
+# Person 4 
+
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.delete("thing_to_delete")
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
+    source.delete_if {|key,value| value = num}
 end
+
+# Identify and describe the ruby method you implemented. 
+# (FROM NATALIE:)
+# I used the delete method on the array. The delete method deletes all items equal to the object in the parentheses.
+# For the hash, I used the delete_if method. The delete_if method deletes any item for which the block evaluates to true. I tried both evaluating
+# the key and the value from the pair and both ways work...so instead of the above you could also use key = name inside the block for example.
+
 
 # Identify and describe the ruby method you implemented. 
 # 
@@ -87,7 +120,10 @@ p my_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "only", 3
 p my_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # Reflect!
-# 
+# I learned a great deal from this exercise, and not just from my own research. 
+# I've never even heard of the .delete or .delete_if methods, so that was very useful.
+# Also, working on Mikee's exercise was a learning experience, because I could take
+# what he said about not being able to manipulate the object and go from there. 
 # 
 # 
 # 
